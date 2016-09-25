@@ -9,6 +9,6 @@ var listingSchema = mongoose.Schema({
           red: 'User'},
   booking: {type: mongoose.Schema.Types.ObjectId,
           red: 'Booking'}
-  });
+  });;
 
 mongoose.model('Listing', listingSchema);

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Please sign up!
+  form(action='new', method='post')
+    div.input
+      span.label Name
+      input(type='text', name='name')
+    div.input
+      span.label Email
+      input(type='email', name='email')
+    div.input
+      span.label Password
+      input(type='password', name='password')
+    div.actions
+      input(type='submit', value='Sign up')

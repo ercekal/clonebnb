@@ -13,6 +13,6 @@ var bookingSchema = mongoose.Schema({
           red: 'User'},
   listing: {type: mongoose.Schema.Types.ObjectId,
           red: 'Listing'}
-})
+});
 
 mongoose.model('Booking', bookingSchema);
