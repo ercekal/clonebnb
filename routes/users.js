@@ -16,10 +16,20 @@ router.get('/signup', function(req, res, next) {
 });
 
 router.post('/new', function(req, res, next) {
-  User.create({name: req.query.name,
-               email: req.query.email,
-               password: req.query.password});
-  res.send('/links');
+  if (req.body.password === req.body.password_confirmation) {
+    User.create({name: req.body.name,
+                 email: req.body.email,
+                 password: req.body.password});
+    User.findOne({'email': req.body.email }, function(err, user){
+      req.session.user = user;
+      console.log(req.session.user);
+      req.session.save();
+            console.log(req.session.user);
+  res.render('listings');
+});
+  } else {
+    res.render('signup');
+  }
 });
 
 module.exports = router;

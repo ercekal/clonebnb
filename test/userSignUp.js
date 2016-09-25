@@ -15,14 +15,13 @@ describe('signup', function() {
   });
 
 it('should register the user and forward to links page', function(done) {
-    browser.fill('name', 'erce');
+    browser.fill('name', 'ercekkk');
     browser.fill('email', 'er@ce.com');
     browser.fill('password', '123');
+    browser.fill('password_confirmation', '123');
     browser.pressButton('Sign up').then(function() {
       browser.assert.success();
-      // browser.assert.url({pathname: '/links'});
-      browser.assert.text('nav', 'Welcome erce');
-      browser.assert.text('h1', 'Listings');
+      browser.assert.text('h1', 'Welcome erce');
       done();
     });
   });
